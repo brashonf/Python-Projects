@@ -1,0 +1,597 @@
++*In[26]:*+
+[source, ipython3]
+----
+pip install --upgrade jupyter jupyter-git
+----
+
+
++*Out[26]:*+
+----
+2169.94s - pydevd: Sending message related to process being replaced timed-out after 5 seconds
+
+Collecting jupyter
+  Downloading jupyter-1.0.0-py2.py3-none-any.whl.metadata (995 bytes)
+Collecting jupyter-git
+  Downloading jupyter-git-1.0.22.tar.gz (6.7 kB)
+  Preparing metadata (setup.py) ... [?25ldone
+[?25hRequirement already satisfied: notebook in ./micromamba/lib/python3.9/site-packages (from jupyter) (7.1.1)
+Collecting qtconsole (from jupyter)
+  Using cached qtconsole-5.5.1-py3-none-any.whl.metadata (5.1 kB)
+Collecting jupyter-console (from jupyter)
+  Downloading jupyter_console-6.6.3-py3-none-any.whl.metadata (5.8 kB)
+Requirement already satisfied: nbconvert in ./micromamba/lib/python3.9/site-packages (from jupyter) (7.16.1)
+Requirement already satisfied: ipykernel in ./micromamba/lib/python3.9/site-packages (from jupyter) (6.29.3)
+Collecting ipywidgets (from jupyter)
+  Using cached ipywidgets-8.1.2-py3-none-any.whl.metadata (2.4 kB)
+Collecting peppercorn (from jupyter-git)
+  Downloading peppercorn-0.6-py3-none-any.whl.metadata (3.4 kB)
+Requirement already satisfied: appnope in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (0.1.4)
+Requirement already satisfied: comm>=0.1.1 in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (0.2.1)
+Requirement already satisfied: debugpy>=1.6.5 in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (1.8.1)
+Requirement already satisfied: ipython>=7.23.1 in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (8.18.1)
+Requirement already satisfied: jupyter-client>=6.1.12 in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (8.6.0)
+Requirement already satisfied: jupyter-core!=5.0.*,>=4.12 in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (5.7.1)
+Requirement already satisfied: matplotlib-inline>=0.1 in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (0.1.6)
+Requirement already satisfied: nest-asyncio in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (1.6.0)
+Requirement already satisfied: packaging in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (23.2)
+Requirement already satisfied: psutil in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (5.9.8)
+Requirement already satisfied: pyzmq>=24 in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (25.1.2)
+Requirement already satisfied: tornado>=6.1 in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (6.4)
+Requirement already satisfied: traitlets>=5.4.0 in ./micromamba/lib/python3.9/site-packages (from ipykernel->jupyter) (5.14.1)
+Collecting widgetsnbextension~=4.0.10 (from ipywidgets->jupyter)
+  Using cached widgetsnbextension-4.0.10-py3-none-any.whl.metadata (1.6 kB)
+Collecting jupyterlab-widgets~=3.0.10 (from ipywidgets->jupyter)
+  Using cached jupyterlab_widgets-3.0.10-py3-none-any.whl.metadata (4.1 kB)
+Requirement already satisfied: prompt-toolkit>=3.0.30 in ./micromamba/lib/python3.9/site-packages (from jupyter-console->jupyter) (3.0.43)
+Requirement already satisfied: pygments in ./micromamba/lib/python3.9/site-packages (from jupyter-console->jupyter) (2.17.2)
+Requirement already satisfied: beautifulsoup4 in ./micromamba/lib/python3.9/site-packages (from nbconvert->jupyter) (4.12.3)
+Requirement already satisfied: bleach!=5.0.0 in ./micromamba/lib/python3.9/site-packages (from nbconvert->jupyter) (6.1.0)
+Requirement already satisfied: defusedxml in ./micromamba/lib/python3.9/site-packages (from nbconvert->jupyter) (0.7.1)
+Requirement already satisfied: importlib-metadata>=3.6 in ./micromamba/lib/python3.9/site-packages (from nbconvert->jupyter) (7.0.1)
+Requirement already satisfied: jinja2>=3.0 in ./micromamba/lib/python3.9/site-packages (from nbconvert->jupyter) (3.1.3)
+Requirement already satisfied: jupyterlab-pygments in ./micromamba/lib/python3.9/site-packages (from nbconvert->jupyter) (0.3.0)
+Requirement already satisfied: markupsafe>=2.0 in ./micromamba/lib/python3.9/site-packages (from nbconvert->jupyter) (2.1.5)
+Requirement already satisfied: mistune<4,>=2.0.3 in ./micromamba/lib/python3.9/site-packages (from nbconvert->jupyter) (3.0.2)
+Requirement already satisfied: nbclient>=0.5.0 in ./micromamba/lib/python3.9/site-packages (from nbconvert->jupyter) (0.9.0)
+Requirement already satisfied: nbformat>=5.7 in ./micromamba/lib/python3.9/site-packages (from nbconvert->jupyter) (5.9.2)
+Requirement already satisfied: pandocfilters>=1.4.1 in ./micromamba/lib/python3.9/site-packages (from nbconvert->jupyter) (1.5.1)
+Requirement already satisfied: tinycss2 in ./micromamba/lib/python3.9/site-packages (from nbconvert->jupyter) (1.2.1)
+Requirement already satisfied: jupyter-server<3,>=2.4.0 in ./micromamba/lib/python3.9/site-packages (from notebook->jupyter) (2.12.5)
+Requirement already satisfied: jupyterlab-server<3,>=2.22.1 in ./micromamba/lib/python3.9/site-packages (from notebook->jupyter) (2.25.3)
+Requirement already satisfied: jupyterlab<4.2,>=4.1.1 in ./micromamba/lib/python3.9/site-packages (from notebook->jupyter) (4.1.6)
+Requirement already satisfied: notebook-shim<0.3,>=0.2 in ./micromamba/lib/python3.9/site-packages (from notebook->jupyter) (0.2.4)
+Collecting qtpy>=2.4.0 (from qtconsole->jupyter)
+  Using cached QtPy-2.4.1-py3-none-any.whl.metadata (12 kB)
+Requirement already satisfied: six>=1.9.0 in ./micromamba/lib/python3.9/site-packages (from bleach!=5.0.0->nbconvert->jupyter) (1.16.0)
+Requirement already satisfied: webencodings in ./micromamba/lib/python3.9/site-packages (from bleach!=5.0.0->nbconvert->jupyter) (0.5.1)
+Requirement already satisfied: zipp>=0.5 in ./micromamba/lib/python3.9/site-packages (from importlib-metadata>=3.6->nbconvert->jupyter) (3.17.0)
+Requirement already satisfied: decorator in ./micromamba/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (5.1.1)
+Requirement already satisfied: jedi>=0.16 in ./micromamba/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.19.1)
+Requirement already satisfied: stack-data in ./micromamba/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.6.3)
+Requirement already satisfied: typing-extensions in ./micromamba/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (4.9.0)
+Requirement already satisfied: exceptiongroup in ./micromamba/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (1.2.0)
+Requirement already satisfied: pexpect>4.3 in ./micromamba/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (4.9.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./micromamba/lib/python3.9/site-packages (from jupyter-client>=6.1.12->ipykernel->jupyter) (2.8.2)
+Requirement already satisfied: platformdirs>=2.5 in ./micromamba/lib/python3.9/site-packages (from jupyter-core!=5.0.*,>=4.12->ipykernel->jupyter) (4.2.0)
+Requirement already satisfied: anyio>=3.1.0 in ./micromamba/lib/python3.9/site-packages (from jupyter-server<3,>=2.4.0->notebook->jupyter) (4.3.0)
+Requirement already satisfied: argon2-cffi in ./micromamba/lib/python3.9/site-packages (from jupyter-server<3,>=2.4.0->notebook->jupyter) (23.1.0)
+Requirement already satisfied: jupyter-events>=0.9.0 in ./micromamba/lib/python3.9/site-packages (from jupyter-server<3,>=2.4.0->notebook->jupyter) (0.9.0)
+Requirement already satisfied: jupyter-server-terminals in ./micromamba/lib/python3.9/site-packages (from jupyter-server<3,>=2.4.0->notebook->jupyter) (0.5.2)
+Requirement already satisfied: overrides in ./micromamba/lib/python3.9/site-packages (from jupyter-server<3,>=2.4.0->notebook->jupyter) (7.7.0)
+Requirement already satisfied: prometheus-client in ./micromamba/lib/python3.9/site-packages (from jupyter-server<3,>=2.4.0->notebook->jupyter) (0.20.0)
+Requirement already satisfied: send2trash>=1.8.2 in ./micromamba/lib/python3.9/site-packages (from jupyter-server<3,>=2.4.0->notebook->jupyter) (1.8.2)
+Requirement already satisfied: terminado>=0.8.3 in ./micromamba/lib/python3.9/site-packages (from jupyter-server<3,>=2.4.0->notebook->jupyter) (0.18.0)
+Requirement already satisfied: websocket-client in ./micromamba/lib/python3.9/site-packages (from jupyter-server<3,>=2.4.0->notebook->jupyter) (1.7.0)
+Requirement already satisfied: async-lru>=1.0.0 in ./micromamba/lib/python3.9/site-packages (from jupyterlab<4.2,>=4.1.1->notebook->jupyter) (2.0.4)
+Requirement already satisfied: httpx>=0.25.0 in ./micromamba/lib/python3.9/site-packages (from jupyterlab<4.2,>=4.1.1->notebook->jupyter) (0.27.0)
+Requirement already satisfied: jupyter-lsp>=2.0.0 in ./micromamba/lib/python3.9/site-packages (from jupyterlab<4.2,>=4.1.1->notebook->jupyter) (2.2.3)
+Requirement already satisfied: tomli>=1.2.2 in ./micromamba/lib/python3.9/site-packages (from jupyterlab<4.2,>=4.1.1->notebook->jupyter) (2.0.1)
+Requirement already satisfied: babel>=2.10 in ./micromamba/lib/python3.9/site-packages (from jupyterlab-server<3,>=2.22.1->notebook->jupyter) (2.14.0)
+Requirement already satisfied: json5>=0.9.0 in ./micromamba/lib/python3.9/site-packages (from jupyterlab-server<3,>=2.22.1->notebook->jupyter) (0.9.17)
+Requirement already satisfied: jsonschema>=4.18.0 in ./micromamba/lib/python3.9/site-packages (from jupyterlab-server<3,>=2.22.1->notebook->jupyter) (4.21.1)
+Requirement already satisfied: requests>=2.31 in ./micromamba/lib/python3.9/site-packages (from jupyterlab-server<3,>=2.22.1->notebook->jupyter) (2.31.0)
+Requirement already satisfied: fastjsonschema in ./micromamba/lib/python3.9/site-packages (from nbformat>=5.7->nbconvert->jupyter) (2.19.1)
+Requirement already satisfied: wcwidth in ./micromamba/lib/python3.9/site-packages (from prompt-toolkit>=3.0.30->jupyter-console->jupyter) (0.2.13)
+Requirement already satisfied: soupsieve>1.2 in ./micromamba/lib/python3.9/site-packages (from beautifulsoup4->nbconvert->jupyter) (2.5)
+Requirement already satisfied: idna>=2.8 in ./micromamba/lib/python3.9/site-packages (from anyio>=3.1.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (3.6)
+Requirement already satisfied: sniffio>=1.1 in ./micromamba/lib/python3.9/site-packages (from anyio>=3.1.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (1.3.1)
+Requirement already satisfied: certifi in ./micromamba/lib/python3.9/site-packages (from httpx>=0.25.0->jupyterlab<4.2,>=4.1.1->notebook->jupyter) (2024.2.2)
+Requirement already satisfied: httpcore==1.* in ./micromamba/lib/python3.9/site-packages (from httpx>=0.25.0->jupyterlab<4.2,>=4.1.1->notebook->jupyter) (1.0.4)
+Requirement already satisfied: h11<0.15,>=0.13 in ./micromamba/lib/python3.9/site-packages (from httpcore==1.*->httpx>=0.25.0->jupyterlab<4.2,>=4.1.1->notebook->jupyter) (0.14.0)
+Requirement already satisfied: parso<0.9.0,>=0.8.3 in ./micromamba/lib/python3.9/site-packages (from jedi>=0.16->ipython>=7.23.1->ipykernel->jupyter) (0.8.3)
+Requirement already satisfied: attrs>=22.2.0 in ./micromamba/lib/python3.9/site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.22.1->notebook->jupyter) (23.2.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./micromamba/lib/python3.9/site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.22.1->notebook->jupyter) (2023.12.1)
+Requirement already satisfied: referencing>=0.28.4 in ./micromamba/lib/python3.9/site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.22.1->notebook->jupyter) (0.33.0)
+Requirement already satisfied: rpds-py>=0.7.1 in ./micromamba/lib/python3.9/site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.22.1->notebook->jupyter) (0.18.0)
+Requirement already satisfied: python-json-logger>=2.0.4 in ./micromamba/lib/python3.9/site-packages (from jupyter-events>=0.9.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (2.0.7)
+Requirement already satisfied: pyyaml>=5.3 in ./micromamba/lib/python3.9/site-packages (from jupyter-events>=0.9.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (6.0)
+Requirement already satisfied: rfc3339-validator in ./micromamba/lib/python3.9/site-packages (from jupyter-events>=0.9.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (0.1.4)
+Requirement already satisfied: rfc3986-validator>=0.1.1 in ./micromamba/lib/python3.9/site-packages (from jupyter-events>=0.9.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (0.1.1)
+Requirement already satisfied: ptyprocess>=0.5 in ./micromamba/lib/python3.9/site-packages (from pexpect>4.3->ipython>=7.23.1->ipykernel->jupyter) (0.7.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in ./micromamba/lib/python3.9/site-packages (from requests>=2.31->jupyterlab-server<3,>=2.22.1->notebook->jupyter) (3.3.2)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./micromamba/lib/python3.9/site-packages (from requests>=2.31->jupyterlab-server<3,>=2.22.1->notebook->jupyter) (1.26.18)
+Requirement already satisfied: argon2-cffi-bindings in ./micromamba/lib/python3.9/site-packages (from argon2-cffi->jupyter-server<3,>=2.4.0->notebook->jupyter) (21.2.0)
+Requirement already satisfied: executing>=1.2.0 in ./micromamba/lib/python3.9/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (2.0.1)
+Requirement already satisfied: asttokens>=2.1.0 in ./micromamba/lib/python3.9/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (2.4.1)
+Requirement already satisfied: pure-eval in ./micromamba/lib/python3.9/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (0.2.2)
+Requirement already satisfied: fqdn in ./micromamba/lib/python3.9/site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.9.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (1.5.1)
+Requirement already satisfied: isoduration in ./micromamba/lib/python3.9/site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.9.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (20.11.0)
+Requirement already satisfied: jsonpointer>1.13 in ./micromamba/lib/python3.9/site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.9.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (2.4)
+Requirement already satisfied: uri-template in ./micromamba/lib/python3.9/site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.9.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (1.3.0)
+Requirement already satisfied: webcolors>=1.11 in ./micromamba/lib/python3.9/site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.9.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (1.13)
+Requirement already satisfied: cffi>=1.0.1 in ./micromamba/lib/python3.9/site-packages (from argon2-cffi-bindings->argon2-cffi->jupyter-server<3,>=2.4.0->notebook->jupyter) (1.16.0)
+Requirement already satisfied: pycparser in ./micromamba/lib/python3.9/site-packages (from cffi>=1.0.1->argon2-cffi-bindings->argon2-cffi->jupyter-server<3,>=2.4.0->notebook->jupyter) (2.21)
+Requirement already satisfied: arrow>=0.15.0 in ./micromamba/lib/python3.9/site-packages (from isoduration->jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.9.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (1.3.0)
+Requirement already satisfied: types-python-dateutil>=2.8.10 in ./micromamba/lib/python3.9/site-packages (from arrow>=0.15.0->isoduration->jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.9.0->jupyter-server<3,>=2.4.0->notebook->jupyter) (2.8.19.20240106)
+Downloading jupyter-1.0.0-py2.py3-none-any.whl (2.7 kB)
+Using cached ipywidgets-8.1.2-py3-none-any.whl (139 kB)
+Downloading jupyter_console-6.6.3-py3-none-any.whl (24 kB)
+Downloading peppercorn-0.6-py3-none-any.whl (4.8 kB)
+Using cached qtconsole-5.5.1-py3-none-any.whl (123 kB)
+Using cached jupyterlab_widgets-3.0.10-py3-none-any.whl (215 kB)
+Using cached QtPy-2.4.1-py3-none-any.whl (93 kB)
+Using cached widgetsnbextension-4.0.10-py3-none-any.whl (2.3 MB)
+Building wheels for collected packages: jupyter-git
+  Building wheel for jupyter-git (setup.py) ... [?25ldone
+[?25h  Created wheel for jupyter-git: filename=jupyter_git-1.0.22-py3-none-any.whl size=6297 sha256=8783b79b8adcbb15c735e54b3d41e559f56db9e76933e6fcda3243d35ee1b199
+  Stored in directory: /Users/brashonford/Library/Caches/pip/wheels/93/96/cc/a9d5f93ebcf59d7ff92d37fa892f5e7a38b521ceac13f72a9f
+Successfully built jupyter-git
+Installing collected packages: peppercorn, widgetsnbextension, qtpy, jupyterlab-widgets, jupyter-git, ipywidgets, qtconsole, jupyter-console, jupyter
+Successfully installed ipywidgets-8.1.2 jupyter-1.0.0 jupyter-console-6.6.3 jupyter-git-1.0.22 jupyterlab-widgets-3.0.10 peppercorn-0.6 qtconsole-5.5.1 qtpy-2.4.1 widgetsnbextension-4.0.10
+Note: you may need to restart the kernel to use updated packages.
+----
+
+
++*In[1]:*+
+[source, ipython3]
+----
+import os
+os.getcwd()
+----
+
+
++*Out[1]:*+
+----'/Users/brashonford'----
+
+
++*In[2]:*+
+[source, ipython3]
+----
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+----
+
+
++*In[3]:*+
+[source, ipython3]
+----
+%matplotlib inline
+sns.set_style("whitegrid")
+plt.style.use("fivethirtyeight")
+----
+
+
++*In[5]:*+
+[source, ipython3]
+----
+df = pd.read_csv("heart.csv")
+df.head()
+----
+
+
++*Out[5]:*+
+----
+[cols=",,,,,,,,,,,,,,",options="header",]
+|===
+| |age |sex |cp |trestbps |chol |fbs |restecg |thalach |exang |oldpeak
+|slope |ca |thal |target
+|0 |52 |1 |0 |125 |212 |0 |1 |168 |0 |1.0 |2 |2 |3 |0
+
+|1 |53 |1 |0 |140 |203 |1 |0 |155 |1 |3.1 |0 |0 |3 |0
+
+|2 |70 |1 |0 |145 |174 |0 |1 |125 |1 |2.6 |0 |0 |3 |0
+
+|3 |61 |1 |0 |148 |203 |0 |1 |161 |0 |0.0 |2 |1 |3 |0
+
+|4 |62 |0 |0 |138 |294 |1 |1 |106 |0 |1.9 |1 |3 |2 |0
+|===
+----
+
+
++*In[6]:*+
+[source, ipython3]
+----
+pd.set_option("display.float", "{:.2f}".format)
+df.describe()
+----
+
+
++*Out[6]:*+
+----
+[cols=",,,,,,,,,,,,,,",options="header",]
+|===
+| |age |sex |cp |trestbps |chol |fbs |restecg |thalach |exang |oldpeak
+|slope |ca |thal |target
+|count |1025.00 |1025.00 |1025.00 |1025.00 |1025.00 |1025.00 |1025.00
+|1025.00 |1025.00 |1025.00 |1025.00 |1025.00 |1025.00 |1025.00
+
+|mean |54.43 |0.70 |0.94 |131.61 |246.00 |0.15 |0.53 |149.11 |0.34 |1.07
+|1.39 |0.75 |2.32 |0.51
+
+|std |9.07 |0.46 |1.03 |17.52 |51.59 |0.36 |0.53 |23.01 |0.47 |1.18
+|0.62 |1.03 |0.62 |0.50
+
+|min |29.00 |0.00 |0.00 |94.00 |126.00 |0.00 |0.00 |71.00 |0.00 |0.00
+|0.00 |0.00 |0.00 |0.00
+
+|25% |48.00 |0.00 |0.00 |120.00 |211.00 |0.00 |0.00 |132.00 |0.00 |0.00
+|1.00 |0.00 |2.00 |0.00
+
+|50% |56.00 |1.00 |1.00 |130.00 |240.00 |0.00 |1.00 |152.00 |0.00 |0.80
+|1.00 |0.00 |2.00 |1.00
+
+|75% |61.00 |1.00 |2.00 |140.00 |275.00 |0.00 |1.00 |166.00 |1.00 |1.80
+|2.00 |1.00 |3.00 |1.00
+
+|max |77.00 |1.00 |3.00 |200.00 |564.00 |1.00 |2.00 |202.00 |1.00 |6.20
+|2.00 |4.00 |3.00 |1.00
+|===
+----
+
+
+
+
++*In[7]:*+
+[source, ipython3]
+----
+df.target.value_counts().plot(kind="bar", color=["salmon", "lightblue"])
+----
+
+
++*Out[7]:*+
+----<Axes: xlabel='target'>
+![png](output_7_1.png)
+----
+
+
++*In[8]:*+
+[source, ipython3]
+----
+df.isna().sum()
+----
+
+
++*Out[8]:*+
+----age         0
+sex         0
+cp          0
+trestbps    0
+chol        0
+fbs         0
+restecg     0
+thalach     0
+exang       0
+oldpeak     0
+slope       0
+ca          0
+thal        0
+target      0
+dtype: int64----
+
+
++*In[9]:*+
+[source, ipython3]
+----
+categorical_val = []
+continous_val = []
+for column in df.columns:
+    print('==============================')
+    print(f"{column} : {df[column].unique()}")
+    if len(df[column].unique()) <= 10:
+        categorical_val.append(column)
+    else:
+        continous_val.append(column)
+----
+
+
++*Out[9]:*+
+----
+==============================
+age : [52 53 70 61 62 58 55 46 54 71 43 34 51 50 60 67 45 63 42 44 56 57 59 64
+ 65 41 66 38 49 48 29 37 47 68 76 40 39 77 69 35 74]
+==============================
+sex : [1 0]
+==============================
+cp : [0 1 2 3]
+==============================
+trestbps : [125 140 145 148 138 100 114 160 120 122 112 132 118 128 124 106 104 135
+ 130 136 180 129 150 178 146 117 152 154 170 134 174 144 108 123 110 142
+ 126 192 115  94 200 165 102 105 155 172 164 156 101]
+==============================
+chol : [212 203 174 294 248 318 289 249 286 149 341 210 298 204 308 266 244 211
+ 185 223 208 252 209 307 233 319 256 327 169 131 269 196 231 213 271 263
+ 229 360 258 330 342 226 228 278 230 283 241 175 188 217 193 245 232 299
+ 288 197 315 215 164 326 207 177 257 255 187 201 220 268 267 236 303 282
+ 126 309 186 275 281 206 335 218 254 295 417 260 240 302 192 225 325 235
+ 274 234 182 167 172 321 300 199 564 157 304 222 184 354 160 247 239 246
+ 409 293 180 250 221 200 227 243 311 261 242 205 306 219 353 198 394 183
+ 237 224 265 313 340 259 270 216 264 276 322 214 273 253 176 284 305 168
+ 407 290 277 262 195 166 178 141]
+==============================
+fbs : [0 1]
+==============================
+restecg : [1 0 2]
+==============================
+thalach : [168 155 125 161 106 122 140 145 144 116 136 192 156 142 109 162 165 148
+ 172 173 146 179 152 117 115 112 163 147 182 105 150 151 169 166 178 132
+ 160 123 139 111 180 164 202 157 159 170 138 175 158 126 143 141 167  95
+ 190 118 103 181 108 177 134 120 171 149 154 153  88 174 114 195 133  96
+ 124 131 185 194 128 127 186 184 188 130  71 137  99 121 187  97  90 129
+ 113]
+==============================
+exang : [0 1]
+==============================
+oldpeak : [1.  3.1 2.6 0.  1.9 4.4 0.8 3.2 1.6 3.  0.7 4.2 1.5 2.2 1.1 0.3 0.4 0.6
+ 3.4 2.8 1.2 2.9 3.6 1.4 0.2 2.  5.6 0.9 1.8 6.2 4.  2.5 0.5 0.1 2.1 2.4
+ 3.8 2.3 1.3 3.5]
+==============================
+slope : [2 0 1]
+==============================
+ca : [2 0 1 3 4]
+==============================
+thal : [3 2 1 0]
+==============================
+target : [0 1]
+----
+
+
++*In[10]:*+
+[source, ipython3]
+----
+plt.figure(figsize=(15, 15))
+
+for i, column in enumerate(categorical_val, 1):
+    plt.subplot(3, 3, i)
+    df[df["target"] == 0][column].hist(bins=35, color='blue', label='Have Heart Disease = NO', alpha=0.6)
+    df[df["target"] == 1][column].hist(bins=35, color='red', label='Have Heart Disease = YES', alpha=0.6)
+    plt.legend()
+    plt.xlabel(column)
+----
+
+
++*Out[10]:*+
+----
+![png](output_10_0.png)
+----
+
+
++*In[11]:*+
+[source, ipython3]
+----
+plt.figure(figsize=(15, 15))
+
+for i, column in enumerate(continous_val, 1):
+    plt.subplot(3, 2, i)
+    df[df["target"] == 0][column].hist(bins=35, color='blue', label='Have Heart Disease = NO', alpha=0.6)
+    df[df["target"] == 1][column].hist(bins=35, color='red', label='Have Heart Disease = YES', alpha=0.6)
+    plt.legend()
+    plt.xlabel(column)
+----
+
+
++*Out[11]:*+
+----
+![png](output_11_0.png)
+----
+
+
++*In[12]:*+
+[source, ipython3]
+----
+
+# Create another figure
+plt.figure(figsize=(10, 8))
+
+# Scatter with postivie examples
+plt.scatter(df.age[df.target==1],
+            df.thalach[df.target==1],
+            c="salmon")
+
+# Scatter with negative examples
+plt.scatter(df.age[df.target==0],
+            df.thalach[df.target==0],
+            c="lightblue")
+
+# Add some helpful info
+plt.title("Heart Disease in function of Age and Max Heart Rate")
+plt.xlabel("Age")
+plt.ylabel("Max Heart Rate")
+plt.legend(["Disease", "No Disease"]);
+----
+
+
++*Out[12]:*+
+----
+![png](output_12_0.png)
+----
+
+
++*In[13]:*+
+[source, ipython3]
+----
+corr_matrix = df.corr()
+fig, ax = plt.subplots(figsize=(15, 15))
+ax = sns.heatmap(corr_matrix,
+                 annot=True,
+                 linewidths=0.5,
+                 fmt=".2f",
+                 cmap="YlGnBu");
+bottom, top = ax.get_ylim()
+ax.set_ylim(bottom + 0.5, top - 0.5)
+----
+
+
++*Out[13]:*+
+----(14.5, -0.5)
+![png](output_13_1.png)
+----
+
+
++*In[14]:*+
+[source, ipython3]
+----
+
+df.drop('target', axis=1).corrwith(df.target).plot(kind='bar', grid=True, figsize=(12, 8), 
+                                                   title="Correlation with target")
+----
+
+
++*Out[14]:*+
+----<Axes: title={'center': 'Correlation with target'}>
+![png](output_14_1.png)
+----
+
+
+
+
++*In[15]:*+
+[source, ipython3]
+----
+categorical_val.remove('target')
+dataset = pd.get_dummies(df, columns = categorical_val)
+
+from sklearn.preprocessing import StandardScaler
+
+s_sc = StandardScaler()
+col_to_scale = ['age', 'trestbps', 'chol', 'thalach', 'oldpeak']
+dataset[col_to_scale] = s_sc.fit_transform(dataset[col_to_scale])
+----
+
+
+
+
++*In[16]:*+
+[source, ipython3]
+----
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+----
+
+
++*In[21]:*+
+[source, ipython3]
+----
+def print_score(clf, X_train, y_train, X_test, y_test, train=True):
+    if train:
+        pred = clf.predict(X_train)
+        clf_report = pd.DataFrame(classification_report(y_train, pred, output_dict=True))
+        print("Train Result:\n================================================")
+        print(f"Accuracy Score: {accuracy_score(y_train, pred) * 100:.2f}%")
+        print("_______________________________________________")
+        print(f"CLASSIFICATION REPORT:\n{clf_report}")
+        print("_______________________________________________")
+        print(f"Confusion Matrix: \n {confusion_matrix(y_train, pred)}\n")
+        
+    elif train==False:
+        pred = clf.predict(X_test)
+        clf_report = pd.DataFrame(classification_report(y_test, pred, output_dict=True))
+        print("Test Result:\n================================================")        
+        print(f"Accuracy Score: {accuracy_score(y_test, pred) * 100:.2f}%")
+        print("_______________________________________________")
+        print(f"CLASSIFICATION REPORT:\n{clf_report}")
+        print("_______________________________________________")
+        print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
+----
+
+
+
+
++*In[22]:*+
+[source, ipython3]
+----
+from sklearn.model_selection import train_test_split
+
+X = dataset.drop('target', axis=1)
+y = dataset.target
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+----
+
+
++*In[23]:*+
+[source, ipython3]
+----
+from sklearn.linear_model import LogisticRegression
+
+lr_clf = LogisticRegression(solver='liblinear')
+lr_clf.fit(X_train, y_train)
+
+print_score(lr_clf, X_train, y_train, X_test, y_test, train=True)
+print_score(lr_clf, X_train, y_train, X_test, y_test, train=False)
+----
+
+
++*Out[23]:*+
+----
+Train Result:
+================================================
+Accuracy Score: 89.54%
+_______________________________________________
+CLASSIFICATION REPORT:
+               0      1  accuracy  macro avg  weighted avg
+precision   0.91   0.89      0.90       0.90          0.90
+recall      0.87   0.92      0.90       0.89          0.90
+f1-score    0.89   0.90      0.90       0.89          0.90
+support   340.00 377.00      0.90     717.00        717.00
+_______________________________________________
+Confusion Matrix: 
+ [[295  45]
+ [ 30 347]]
+
+Test Result:
+================================================
+Accuracy Score: 81.82%
+_______________________________________________
+CLASSIFICATION REPORT:
+               0      1  accuracy  macro avg  weighted avg
+precision   0.85   0.79      0.82       0.82          0.82
+recall      0.79   0.85      0.82       0.82          0.82
+f1-score    0.82   0.82      0.82       0.82          0.82
+support   159.00 149.00      0.82     308.00        308.00
+_______________________________________________
+Confusion Matrix: 
+ [[125  34]
+ [ 22 127]]
+
+----
+
+
++*In[24]:*+
+[source, ipython3]
+----
+test_score = accuracy_score(y_test, lr_clf.predict(X_test)) * 100
+train_score = accuracy_score(y_train, lr_clf.predict(X_train)) * 100
+
+results_df = pd.DataFrame(data=[["Logistic Regression", train_score, test_score]], 
+                          columns=['Model', 'Training Accuracy %', 'Testing Accuracy %'])
+results_df
+----
+
+
++*Out[24]:*+
+----
+[cols=",,,",options="header",]
+|===
+| |Model |Training Accuracy % |Testing Accuracy %
+|0 |Logistic Regression |89.54 |81.82
+|===
+----
+
+
++*In[ ]:*+
+[source, ipython3]
+----
+
+----
